@@ -1,6 +1,18 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  font-size: 1.5rem;
+  width: 100vw;
+  height: 100vh;
+}
+h1 {
+  font-size: min(2.5rem, 10vw);
+}
 .exchange-box {
   border: 1px solid black;
-  width: 400px;
 }
 
 /* Style The Dropdown Button */
@@ -21,6 +33,9 @@
   width: 100%;
 }
 
+.dropdown button {
+  font-size: 1.5rem;
+}
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
@@ -61,4 +76,19 @@
 
 .input-area input {
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 1.5rem;
+}
+
+.input-area input:focus {
+  outline: none;
+  font-size: 1.5rem;
+}
+
+.input-area input::-webkit-inner-spin-button,
+.input-area input::-webkit-outer-spin-button {
+  display: none;
 }

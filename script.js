@@ -54,8 +54,32 @@ document.querySelectorAll("#to-currency-list a").forEach((menu) =>
   })
 );
 
-function convert() {
-  let amount = document.getElementById("from-input").value;
-  let convertedAmount = amount * currencyRatio[fromCurrency][toCurrency];
-  document.getElementById("to-input").value = convertedAmount;
+function convert(type) {
+  //   console.log(type);
+  let amount = 0;
+  if (type == "from") {
+    let amount = document.getElementById("from-input").value;
+    let convertedAmount = amount * currencyRatio[fromCurrency][toCurrency];
+    document.getElementById("to-input").value = convertedAmount;
+  } else if (type == "to") {
+    let amount = document.getElementById("to-input").value;
+    let convertedAmount = amount * currencyRatio[toCurrency][fromCurrency];
+    document.getElementById("from-input").value = convertedAmount;
+  }
 }
+
+// chatgpt의 응답
+
+// function calculateExchange(inputId) {
+//     const usdToKrw = 1130; // Example exchange rate
+
+//     if (inputId === 1) {
+//       const inputUSD = document.getElementById("input1").value;
+//       const outputKRW = inputUSD * usdToKrw;
+//       document.getElementById("output1").value = outputKRW.toFixed(2);
+//     } else if (inputId === 2) {
+//       const inputKRW = document.getElementById("input2").value;
+//       const outputUSD = inputKRW / usdToKrw;
+//       document.getElementById("output2").value = outputUSD.toFixed(2);
+//     }
+//   }
